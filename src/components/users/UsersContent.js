@@ -65,6 +65,7 @@ function UsersContent(props) {
       console.log("Что-то пошло не так с сервером");
     } else {
       setUsers(data);
+      console.log("dataaaaaa: " , data)
     }
     setIsLoading(false);
   }, []);

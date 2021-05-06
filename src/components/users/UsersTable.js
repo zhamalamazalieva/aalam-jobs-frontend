@@ -18,6 +18,7 @@ function UsersTable({users,  onClickDelete, onClickEdit }){
                 scopedSlots={{
                     name: (item) => <td>{item.username}</td>,
                     email:(item) => <td>{item.email}</td>,
+                    role: (item) => <td>{item.role}</td>,
                     actions: (item) => (
                         <td>
                           <CRow className="m-width">
@@ -53,12 +54,17 @@ const fields = [
     {
         key:"username",
         label:"Имя пользователя",
-        _style: { width: "35%" }
+        _style: { width: "30%" }
     },
     {
         key:"email",
         label:"Электронный адрес",
-        _style: { width: "35%" }
+        _style: { width: "30%" }
+    },
+    {
+       key:"role",
+       label:"Должность",
+       _style:{ width: "20%"}
     },
     {
         key:"actions",

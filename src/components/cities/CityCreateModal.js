@@ -12,7 +12,6 @@ import {
   CForm,
   CInput,
 } from "@coreui/react";
-import MiniSpinner from "../spinners/MiniSpinner";
 import ServerServiceContext from "../../contexts/ServerServiceContext";
 import Select from "react-select";
 import { Formik } from 'formik'
@@ -54,7 +53,7 @@ function CityCreateModal({
   
   const onSubmit = async (values) => {
     setIsLoading(true);
-    const { hasError, data } = await ServerService.createCity({ name: values.name, country: selectedCountry.value });
+    const { hasError} = await ServerService.createCity({ name: values.name, country: selectedCountry.value });
 
     if (hasError) {
       console.log("Ошибка с сервером");

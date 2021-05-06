@@ -5,7 +5,6 @@ import {
   CCardBody,
   CCol,
   CRow,
-  CHeader,
   CCardHeader,
 } from "@coreui/react";
 import ServerServiceContext from "src/contexts/ServerServiceContext";

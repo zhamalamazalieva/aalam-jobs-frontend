@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import {
   CCol,
   CNav,
@@ -12,16 +12,12 @@ import {
   CTabs,
   CCardHeader
 } from '@coreui/react'
-import CIcon from '@coreui/icons-react'
 import { DocsLink } from 'src/reusable'
 import CountriesContent from '../countries/CountriesContent'
 import CitiesContent from '../cities/CitiesContent'
-import Cities from 'src/pages/Cities'
 
 
 const Catalog = () => {
-  const [active, setActive] = useState(1)
-  const lorem = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit.'
 
   return (
     <CRow>
@@ -58,7 +54,7 @@ const Catalog = () => {
                   <CitiesContent/>
                 </CTabPane>
                 <CTabPane>
-                  {`3. ${lorem}`}
+                
                 </CTabPane>
               </CTabContent>
             </CTabs>

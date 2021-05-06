@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -63,8 +63,8 @@ const LoginPage = () => {
                       handleBlur,
                     }) => (
                       <CForm onSubmit={handleSubmit}>
-                        <h1>Login</h1>
-                        <p className="text-muted">Sign In to your account</p>
+                        <h1>Войти</h1>
+                        <p className="text-muted">Войтиде в свой аккаунт</p>
                         <CInputGroup className="mb-4">
                           <CInputGroupPrepend>
                             <CInputGroupText>
@@ -72,40 +72,40 @@ const LoginPage = () => {
                             </CInputGroupText>
                           </CInputGroupPrepend>
                           <CInput
-                          id="username"
+                            id="username"
                             value={values.username}
                             onChange={handleChange}
                             type="text"
                             onBlur={handleBlur}
-                            className={ errors.username && touched.username ? "border-danger" : ""}
+                            className={errors.username && touched.username ? "border-danger" : ""}
                           />
                           <div className="text-danger position-abs">
-                            { errors.username && touched.username && errors.username}
+                            {errors.username && touched.username && errors.username}
                           </div>
-                        </CInputGroup>                        
-                        <CInputGroup className="mb-5">
+                        </CInputGroup>
+                        <CInputGroup className="mb-4">
                           <CInputGroupPrepend>
                             <CInputGroupText>
                               <CIcon name="cil-lock-locked" />
                             </CInputGroupText>
                           </CInputGroupPrepend>
                           <CInput
-                          id="password"
+                            id="password"
                             value={values.password}
                             onChange={handleChange}
                             type="password"
                             onBlur={handleBlur}
-                            className={ errors.password && touched.password ? "border-danger" : ""}
+                            className={errors.password && touched.password ? "border-danger" : ""}
                           />
-                           <div className="text-danger position-abs">
-                            { errors.password && touched.password && errors.password}
+                          <div className="text-danger position-abs">
+                            {errors.password && touched.password && errors.password}
                           </div>
-                         
+
                         </CInputGroup>
                         {error && error.detail && (
-                          <span className="text-danger danger-message">
-                            Некорректные данные
-                          </span>
+                          <CInputGroup className="text-danger danger-message mb-2">
+                            Вы ввели некорректные данные
+                          </CInputGroup>
                         )}
                         <CRow>
                           <CCol xs="6">
@@ -117,11 +117,11 @@ const LoginPage = () => {
                               Login
                             </CButton>
                           </CCol>
-                          <CCol xs="6" className="text-right">
+                          {/* <CCol xs="6" className="text-right">
                             <CButton color="link" className="px-0">
                               Forgot password?
                             </CButton>
-                          </CCol>
+                          </CCol> */}
                         </CRow>
                       </CForm>
                     )}
@@ -134,12 +134,7 @@ const LoginPage = () => {
               >
                 <CCardBody className="text-center">
                   <div>
-                    <h2>Sign up</h2>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua.
-                    </p>
+                    <h2>Регистрация</h2>
                     <Link to="/register">
                       <CButton
                         color="primary"
@@ -147,7 +142,7 @@ const LoginPage = () => {
                         active
                         tabIndex={-1}
                       >
-                        Register Now!
+                        Зарегистрироваться сейчас!
                       </CButton>
                     </Link>
                   </div>

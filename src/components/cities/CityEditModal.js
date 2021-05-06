@@ -11,7 +11,7 @@ import {
     CLabel,
     CForm,
   } from "@coreui/react";
-  import React, { useContext, useState, useCallback } from "react";
+  import React, { useContext, useState } from "react";
   import MiniSpinner from "../spinners/MiniSpinner";
   import ServerServiceContext from "../../contexts/ServerServiceContext";
   import { Formik } from "formik";

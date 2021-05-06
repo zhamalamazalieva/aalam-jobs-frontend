@@ -1,27 +1,18 @@
 {
-  "name": "react-redux-core-ui-starter",
+  "name": "aalam-jobs",
   "version": "3.2.1",
   "description": "Open source React Redux CoreUI starter",
-  "author": {
-    "name": "SmartPost",
-    "url": "https://www.smartpost.kg",
-    "github": "https://github.com/bekturfs",
-    "gitlab": "https://gitlab.com/bekturfs",
-    "twitter": "https://twitter.com/bekturfs"
-  },
+  "author": "SmartPost (https://www.smartpost.kg)",
   "contributors": [
-    {
-      "name": "SmartPost Team",
-      "url": "https://www.smartpost.kg"
-    }
+    "SmartPost Team (https://www.smartpost.kg)"
   ],
-  "homepage": ".",
+  "homepage": "http://.",
   "copyright": "Copyright 2021-2025 SmartPost",
   "license": "MIT",
   "private": true,
   "repository": {
     "type": "git",
-    "url": "git@gitlab.com:bekturfs/react-redux-core-ui-starter.git"
+    "url": "git+ssh://git@gitlab.com/bekturfs/react-redux-core-ui-starter.git"
   },
   "dependencies": {
     "@coreui/chartjs": "^2.0.0",
@@ -92,5 +83,6 @@
   "engines": {
     "node": ">=10",
     "npm": ">=6"
-  }
+  },
+  "main": "index.js"
 }

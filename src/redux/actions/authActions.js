@@ -8,6 +8,7 @@ import {
   LOGIN_LOADING,
   CLEAR_ERROR,
   REGISTER_SUCCESS,
+  REGISTER_FAIL,
 } from "../types/authTypes";
 
 //USERLOAD
@@ -64,6 +65,7 @@ export const register = (
   email,
   username,
   password,
+  role,
   toLogin
 ) => async (dispatch) => {
   const result = await doRequestAndParse(
@@ -71,16 +73,16 @@ export const register = (
     {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email,username, password }),
+      body: JSON.stringify({ email,username, password, role }),
     }
   );
   const { hasError, data } = result;
   if (hasError) {
-
+    dispatch(registerFail(data));
   } else {
-    const { email, username, password } = data;
+    const { email, username, password, role} = data;
     toLogin();
-    dispatch(registerSuccess(email, username, password));
+    dispatch(registerSuccess(email, username, password, role));
   }
 };
 
@@ -90,9 +92,13 @@ export const loginSuccess = ( accessToken, refreshToken) => ({
   type: LOGIN_SUCCESS,
   payload: {  accessToken, refreshToken },
 });
-export const registerSuccess = (email, username, password) => ({
+export const registerSuccess = (email, username, password, role) => ({
   type: REGISTER_SUCCESS,
-  payload: { email, username, password },
+  payload: { email, username, password, role },
+});
+export const registerFail = (error) => ({
+  type: REGISTER_FAIL,
+  payload: { error },
 });
 export const loginFail = (error) => ({ type: LOGIN_FAIL, payload: error });
 
